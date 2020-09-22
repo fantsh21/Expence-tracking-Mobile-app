@@ -64,28 +64,27 @@ class LoginPageState extends State<LoginPage> {
             )),
           ),
           Container(
-            child: Container(
-              child: RaisedButton(
-                child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 60),
-                  padding: EdgeInsets.symmetric(horizontal: 18),
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      color: Color(0xFFBb43757),
-                      borderRadius: BorderRadius.circular(50)),
-                  child: Text(
-                    "login",
-                    style: TextStyle(fontSize: 20, color: Colors.white),
-                  ),
+            child: RaisedButton(
+              color: Colors.white,
+              child: Container(
+                margin: EdgeInsets.all(60),
+                padding: EdgeInsets.all(18),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    color: Color(0xFFBb43757),
+                    borderRadius: BorderRadius.circular(50)),
+                child: Text(
+                  "login",
+                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  textAlign: TextAlign.center,
                 ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Expenses()),
-                  );
-                },
-                padding: EdgeInsets.symmetric(vertical: 18),
               ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Expenses()),
+                );
+              },
             ),
           ),
         ],

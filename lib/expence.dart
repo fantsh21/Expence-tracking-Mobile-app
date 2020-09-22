@@ -28,8 +28,8 @@ class _ExpensesState extends State<Expenses> {
                   ),
                   Stack(alignment: Alignment.topRight, children: <Widget>[
                     IconButton(
-                      icon: Icon(Icons.notifications),
-                      onPressed: null,
+                      icon: Icon(Icons.notifications_none),
+                      onPressed: () {},
                     ),
                     CircleAvatar(
                       radius: 5,
