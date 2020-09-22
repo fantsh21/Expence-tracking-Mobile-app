@@ -78,7 +78,22 @@ class _ExpensesState extends State<Expenses> {
                             width: 200,
                             child: Container(
                               child: Column(
-                                children: <Widget>[Text("For buying PS5")],
+                                children: <Widget>[
+                                  Text(
+                                    "For buying PS5",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 20,
+                                    ),
+                                  ),
+                                  Text(
+                                    "sep-22-2020",
+                                    style: TextStyle(
+                                      color: Colors.grey,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  )
+                                ],
                               ),
                             ),
                           ),
