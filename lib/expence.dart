@@ -71,6 +71,24 @@ class _ExpensesState extends State<Expenses> {
                             Icons.attach_money,
                           ),
                         ),
+                      ),
+                      Row(
+                        children: [
+                          Container(
+                            width: 200,
+                            child: Container(
+                              child: Column(
+                                children: <Widget>[Text("For buying PS5")],
+                              ),
+                            ),
+                          ),
+                          Container(
+                            width: 50,
+                            child: Column(
+                              children: <Widget>[Text("For buying PS5")],
+                            ),
+                          ),
+                        ],
                       )
                     ],
                   ),
