@@ -43,6 +43,9 @@ class LoginPageState extends State<LoginPage> {
                 child: TextField(
               decoration: InputDecoration(
                   prefixIcon: Icon(Icons.person),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.pinkAccent[700]),
+                      borderRadius: BorderRadius.all(Radius.circular(10))),
                   border: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.pinkAccent[700]),
                       borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -64,27 +67,25 @@ class LoginPageState extends State<LoginPage> {
             )),
           ),
           Container(
-            child: RaisedButton(
-              color: Colors.white,
-              child: Container(
-                margin: EdgeInsets.all(60),
-                padding: EdgeInsets.all(18),
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    color: Color(0xFFBb43757),
-                    borderRadius: BorderRadius.circular(50)),
-                child: Text(
-                  "login",
-                  style: TextStyle(fontSize: 20, color: Colors.white),
-                  textAlign: TextAlign.center,
-                ),
-              ),
+            margin: EdgeInsets.all(20),
+            padding: EdgeInsets.all(20),
+            child: OutlineButton(
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => Expenses()),
                 );
               },
+              borderSide: BorderSide(
+                style: BorderStyle.solid,
+                color: Colors.pinkAccent[700],
+              ),
+              highlightElevation: (10),
+              child: Text(
+                "login",
+                style: TextStyle(fontSize: 20, color: Colors.black),
+                textAlign: TextAlign.center,
+              ),
             ),
           ),
         ],
