@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:xpense_trcr/chart/catagoriesRow.dart';
+import 'package:xpense_trcr/chart/pieCartView.dart';
 
 class PieChart extends StatefulWidget {
   @override
@@ -13,14 +14,14 @@ class _PieChartState extends State<PieChart> {
         child: Column(
       children: <Widget>[
         SizedBox(
-          height: 300,
+          height: 400,
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 25),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 SizedBox(
-                  height: 175,
+                  height: 250,
                 ),
                 Text(
                   "Daily Expenses",
@@ -32,8 +33,8 @@ class _PieChartState extends State<PieChart> {
                 Expanded(
                     child: Row(
                   children: <Widget>[
-                    CatagoriesRow()
-                    //PieChartView(),
+                    CatagoriesRow(),
+                    PieChartview(),
                   ],
                 )),
               ],

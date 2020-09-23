@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:xpense_trcr/chart/pieChart.dart';
 
 class Expenses extends StatefulWidget {
   @override
@@ -10,75 +11,75 @@ class _ExpensesState extends State<Expenses> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: ListView(
-      children: <Widget>[
-        Container(
-            height: 70,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      CircleAvatar(
-                        backgroundColor: Colors.grey[300],
-                        child: Icon(Icons.person),
-                      ),
-                    ],
-                  ),
-                  Stack(alignment: Alignment.topRight, children: <Widget>[
-                    IconButton(
-                      icon: Icon(Icons.notifications_none),
-                      iconSize: 30,
-                      onPressed: () {},
-                    ),
-                    CircleAvatar(
-                      radius: 5,
-                    ),
-                  ])
-                ],
-              ),
-            )),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            height: expandIt ? 400 : 100,
-            decoration: BoxDecoration(
-              color: Colors.grey[300],
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Column(
-              children: <Widget>[
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.only(top: 10),
-                    child: Column(
+      body: ListView(
+        children: <Widget>[
+          Container(
+              height: 70,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Row(
                       children: <Widget>[
-                        Text(
-                          "EXPENSES",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 25,
-                          ),
+                        CircleAvatar(
+                          backgroundColor: Colors.grey[300],
+                          child: Icon(Icons.person),
                         ),
                       ],
                     ),
-                  ),
-                ),
-                !expandIt
-                    ? SizedBox.shrink()
-                    : Container(
-                        height: 300,
-                        child: ListView.builder(
-                          itemCount: 4,
-                          itemBuilder: (BuildContext context, int index) {
-                            return buildLVContainer();
-                          },
-                        ),
+                    Stack(alignment: Alignment.topRight, children: <Widget>[
+                      IconButton(
+                        icon: Icon(Icons.notifications_none),
+                        iconSize: 30,
+                        onPressed: () {},
                       ),
-                IconButton(
+                      CircleAvatar(
+                        radius: 5,
+                      ),
+                    ])
+                  ],
+                ),
+              )),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: expandIt ? 400 : 100,
+              decoration: BoxDecoration(
+                color: Colors.grey[300],
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(
+                children: <Widget>[
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.only(top: 10),
+                      child: Column(
+                        children: <Widget>[
+                          Text(
+                            "EXPENSES",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  !expandIt
+                      ? SizedBox.shrink()
+                      : Container(
+                          height: 300,
+                          child: ListView.builder(
+                            itemCount: 4,
+                            itemBuilder: (BuildContext context, int index) {
+                              return buildLVContainer();
+                            },
+                          ),
+                        ),
+                  IconButton(
                     icon: Icon(expandIt
                         ? Icons.keyboard_arrow_up
                         : Icons.arrow_downward),
@@ -88,13 +89,21 @@ class _ExpensesState extends State<Expenses> {
                           expandIt = !expandIt;
                         },
                       );
-                    })
-              ],
+                    },
+                  ),
+                ],
+              ),
             ),
           ),
-        )
-      ],
-    ));
+          Expanded(
+              child: Container(
+            child: Column(
+              children: [PieChart()],
+            ),
+          ))
+        ],
+      ),
+    );
   }
 
   Container buildLVContainer() {
