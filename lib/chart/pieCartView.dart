@@ -11,7 +11,7 @@ class _PieChartviewState extends State<PieChartview> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      flex: 6,
+      flex: 4,
       child: LayoutBuilder(
         builder: (context, constraint) => Container(
           decoration: BoxDecoration(
@@ -28,7 +28,7 @@ class _PieChartviewState extends State<PieChartview> {
                 spreadRadius: -2,
                 blurRadius: 10,
                 offset: Offset(5, 5),
-                color: Colors.pinkAccent[200],
+                color: Colors.black,
               ),
             ],
           ),
@@ -45,7 +45,27 @@ class _PieChartviewState extends State<PieChartview> {
                     ),
                   ),
                 ),
-              )
+              ),
+              Center(
+                child: Container(
+                    height: constraint.maxWidth * 0.4,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            blurRadius: 1,
+                            offset: Offset(-1, -1),
+                            color: Colors.black,
+                          ),
+                          BoxShadow(
+                            spreadRadius: -2,
+                            blurRadius: 10,
+                            offset: Offset(5, 5),
+                            color: Colors.black.withOpacity(0.5),
+                          ),
+                        ])),
+              ),
             ],
           ),
         ),

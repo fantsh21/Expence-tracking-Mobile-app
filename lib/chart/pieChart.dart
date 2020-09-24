@@ -10,18 +10,19 @@ class PieChart extends StatefulWidget {
 class _PieChartState extends State<PieChart> {
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
     return Container(
         child: Column(
       children: <Widget>[
         SizedBox(
-          height: 400,
+          height: height * 0.32,
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 25),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 SizedBox(
-                  height: 250,
+                  height: height * 0.05,
                 ),
                 Text(
                   "Daily Expenses",

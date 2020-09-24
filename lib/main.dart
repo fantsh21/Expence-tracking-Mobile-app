@@ -28,8 +28,7 @@ class LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
+        children: [
           Container(
             margin: EdgeInsets.only(top: 1),
             padding: EdgeInsets.symmetric(),
@@ -37,56 +36,62 @@ class LoginPageState extends State<LoginPage> {
               child: Image.asset("assets/images/30679.jpg"),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 18.0),
-            child: Expanded(
-                child: TextField(
-              decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.person),
-                  focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.pinkAccent[700]),
-                      borderRadius: BorderRadius.all(Radius.circular(10))),
-                  border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.pinkAccent[700]),
-                      borderRadius: BorderRadius.all(Radius.circular(10))),
-                  contentPadding: EdgeInsets.symmetric(horizontal: 18),
-                  labelText: "Username"),
-            )),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 18.0),
-            child: Expanded(
-                child: TextField(
-              decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.vpn_key),
-                  border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.pinkAccent[700]),
-                      borderRadius: BorderRadius.all(Radius.circular(10))),
-                  contentPadding: EdgeInsets.symmetric(horizontal: 18),
-                  labelText: "Password"),
-            )),
-          ),
-          Container(
-            margin: EdgeInsets.all(20),
-            padding: EdgeInsets.all(20),
-            child: OutlineButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Expenses()),
-                );
-              },
-              borderSide: BorderSide(
-                style: BorderStyle.solid,
-                color: Colors.pinkAccent[700],
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 18.0, vertical: 20),
+                child: Expanded(
+                    child: TextField(
+                  decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.person),
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.pinkAccent[700]),
+                          borderRadius: BorderRadius.all(Radius.circular(10))),
+                      border: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.pinkAccent[700]),
+                          borderRadius: BorderRadius.all(Radius.circular(10))),
+                      contentPadding: EdgeInsets.symmetric(horizontal: 18),
+                      labelText: "Username"),
+                )),
               ),
-              highlightElevation: (10),
-              child: Text(
-                "login",
-                style: TextStyle(fontSize: 20, color: Colors.black),
-                textAlign: TextAlign.center,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                child: Expanded(
+                    child: TextField(
+                  decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.vpn_key),
+                      border: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.pinkAccent[700]),
+                          borderRadius: BorderRadius.all(Radius.circular(10))),
+                      contentPadding: EdgeInsets.symmetric(horizontal: 18),
+                      labelText: "Password"),
+                )),
               ),
-            ),
+              Container(
+                margin: EdgeInsets.all(20),
+                padding: EdgeInsets.all(20),
+                child: OutlineButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Expenses()),
+                    );
+                  },
+                  borderSide: BorderSide(
+                    style: BorderStyle.solid,
+                    color: Colors.pinkAccent[700],
+                  ),
+                  highlightElevation: (10),
+                  child: Text(
+                    "login",
+                    style: TextStyle(fontSize: 20, color: Colors.black),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),

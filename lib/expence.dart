@@ -46,7 +46,7 @@ class _ExpensesState extends State<Expenses> {
             child: Container(
               height: expandIt ? 400 : 100,
               decoration: BoxDecoration(
-                color: Colors.grey[300],
+                color: Colors.grey[200],
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Column(
@@ -123,7 +123,7 @@ class _ExpensesState extends State<Expenses> {
               height: 50,
               width: 50,
               decoration: BoxDecoration(
-                color: Colors.blueAccent,
+                color: Colors.blue[100],
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Icon(
