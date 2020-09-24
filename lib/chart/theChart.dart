@@ -49,7 +49,7 @@ class Catagories {
 final kCatagories = [
   Catagories('Mobile Card', amount: 50.00),
   Catagories('Transport', amount: 150.00),
-  Catagories('Snacks', amount: 15.00),
+  Catagories('Snacks', amount: 55.00),
   Catagories('Bills', amount: 250.00),
   Catagories('House Rent', amount: 1000.00),
   Catagories('Food', amount: 2050.00),
@@ -57,8 +57,8 @@ final kCatagories = [
 final kColorsList = [
   Colors.blue,
   Colors.lightBlueAccent,
-  Colors.green,
+  Colors.yellow,
   Colors.orange,
   Colors.red,
-  Colors.yellow,
+  Colors.green,
 ];

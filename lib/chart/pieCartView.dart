@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:xpense_trcr/chart/theChart.dart';
@@ -48,23 +50,34 @@ class _PieChartviewState extends State<PieChartview> {
               ),
               Center(
                 child: Container(
-                    height: constraint.maxWidth * 0.4,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 1,
-                            offset: Offset(-1, -1),
-                            color: Colors.black,
-                          ),
-                          BoxShadow(
-                            spreadRadius: -2,
-                            blurRadius: 10,
-                            offset: Offset(5, 5),
-                            color: Colors.black.withOpacity(0.5),
-                          ),
-                        ])),
+                  height: constraint.maxWidth * 0.4,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 1,
+                        offset: Offset(-1, -1),
+                        color: Colors.black,
+                      ),
+                      BoxShadow(
+                        spreadRadius: -2,
+                        blurRadius: 10,
+                        offset: Offset(5, 5),
+                        color: Colors.black.withOpacity(0.5),
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: Text(
+                      "\$2438.60",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17,
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
