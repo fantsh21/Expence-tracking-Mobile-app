@@ -22,7 +22,7 @@ class _PieChartState extends State<PieChart> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 SizedBox(
-                  height: height * 0.05,
+                  height: height * 0.06,
                 ),
                 Text(
                   "Daily Expenses",
